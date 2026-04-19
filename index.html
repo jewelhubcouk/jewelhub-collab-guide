@@ -658,11 +658,13 @@ async function submitApplication() {
   };
 
   try {
-    await fetch(APPS_SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+const formData = new FormData();
+formData.append('data', JSON.stringify(data));
+await fetch(APPS_SCRIPT_URL, {
+  method: 'POST',
+  mode: 'no-cors',
+  body: formData
+});
     document.getElementById('pathBContent').style.display = 'none';
     document.getElementById('pathAContent').style.display = 'none';
     document.getElementById('pathA').style.display = 'none';
