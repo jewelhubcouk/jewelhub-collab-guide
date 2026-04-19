@@ -4,104 +4,92 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JewelHub™ Collab Programme — Your Complete Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --teal: #266266; --teal-dark: #1a4245; --gold: #C9A84C; --gold-light: #e8c96a;
   --cream: #FFF9F0; --white: #fff; --text: #1a2e30; --muted: #6a8a8c;
   --border: #e0ecec; --error: #E8735A; --success: #5BAD8F;
-  --s1: #266266; --s2: #8B7FB8; --s3: #E8735A; --s4: #C9A84C; --s5: #5BAD8F;
 }
 body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
 .app { max-width: 780px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
 
-/* ── LOGO ── */
 .logo-bar { text-align: center; padding: 1.5rem 0 1rem; }
-.logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--teal); letter-spacing: 0.04em; }
+.logo-text { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--teal); letter-spacing: 0.04em; }
 .logo-text span { color: var(--gold); }
-.logo-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
+.logo-tag { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-top: 0.3rem; }
 
-/* ── PROGRESS ── */
-.progress-label { text-align: center; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+.progress-label { text-align: center; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
 .progress-wrap { display: flex; gap: 0.3rem; margin-bottom: 2rem; }
-.pb { flex: 1; height: 5px; border-radius: 999px; background: #ddd; transition: background 0.4s; }
+.pb { flex: 1; height: 6px; border-radius: 999px; background: #ddd; transition: background 0.4s; }
 .pb.done { background: var(--teal); }
 .pb.active { background: var(--gold); }
 
-/* ── CARD ── */
-.card { background: var(--white); border-radius: 20px; padding: 2.2rem 1.8rem; box-shadow: 0 4px 30px rgba(38,98,102,0.08); display: none; animation: fadeUp 0.35s ease; }
+.card { background: var(--white); border-radius: 20px; padding: 2.5rem 2rem; box-shadow: 0 4px 30px rgba(38,98,102,0.08); display: none; animation: fadeUp 0.35s ease; }
 .card.active { display: block; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
 
-/* ── HERO BANNER ── */
 .hero-banner { background: linear-gradient(135deg, var(--teal-dark), var(--teal)); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 1.8rem; position: relative; overflow: hidden; }
 .hero-banner::before { content: '✦'; position: absolute; font-size: 10rem; color: rgba(201,168,76,0.06); top: -2rem; right: -1rem; line-height: 1; pointer-events: none; }
-.hero-banner h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 0.8rem; }
+.hero-banner h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--white); line-height: 1.15; margin-bottom: 0.8rem; }
 .hero-banner h1 span { color: var(--gold-light); }
-.hero-banner p { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 480px; margin: 0 auto 1.5rem; }
+.hero-banner p { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.75; max-width: 480px; margin: 0 auto 1.5rem; }
 .hero-pills { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; }
-.hero-pill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: var(--white); font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.9rem; border-radius: 999px; }
+.hero-pill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: var(--white); font-size: 0.82rem; font-weight: 700; padding: 0.4rem 1rem; border-radius: 999px; }
 
-/* ── STEP BADGE ── */
-.step-badge { display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 999px; padding: 0.35rem 1rem; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
-.card h2 { font-size: clamp(1.4rem, 3.5vw, 2rem); font-weight: 900; color: var(--text); line-height: 1.2; margin-bottom: 0.6rem; }
-.card .sub { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.step-badge { display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 999px; padding: 0.4rem 1.1rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+.card h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 900; color: var(--text); line-height: 1.2; margin-bottom: 0.7rem; }
+.card .sub { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
 
-/* ── HIGHLIGHT BOX ── */
-.hbox { border-radius: 14px; padding: 1.2rem 1.4rem; margin: 1rem 0; }
+.hbox { border-radius: 14px; padding: 1.3rem 1.5rem; margin: 1rem 0; }
 .hbox.teal { background: #e8f4f5; border-left: 4px solid var(--teal); }
 .hbox.gold { background: #fdf6e3; border-left: 4px solid var(--gold); }
 .hbox.coral { background: #fdf0ed; border-left: 4px solid var(--error); }
 .hbox.mint { background: #edf7f2; border-left: 4px solid var(--success); }
 .hbox.lavender { background: #f2f0f9; border-left: 4px solid #8B7FB8; }
-.hbox h3 { font-size: 0.88rem; font-weight: 900; margin-bottom: 0.5rem; }
-.hbox.teal h3 { color: #1a5254; }
-.hbox.gold h3 { color: #7a5c0a; }
-.hbox.coral h3 { color: #a03a20; }
-.hbox.mint h3 { color: #1a5234; }
-.hbox.lavender h3 { color: #4a3580; }
+.hbox.warning { background: #fff3cd; border-left: 4px solid #d4af37; }
+.hbox h3 { font-size: 1rem; font-weight: 900; margin-bottom: 0.5rem; }
+.hbox.teal h3 { color: #1a5254; } .hbox.gold h3 { color: #7a5c0a; }
+.hbox.coral h3 { color: #a03a20; } .hbox.mint h3 { color: #1a5234; }
+.hbox.lavender h3 { color: #4a3580; } .hbox.warning h3 { color: #7a5c0a; }
 .hbox ul { list-style: none; }
-.hbox ul li { font-size: 0.86rem; color: var(--text); padding: 0.28rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; gap: 0.6rem; line-height: 1.5; }
+.hbox ul li { font-size: 0.95rem; color: var(--text); padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; gap: 0.6rem; line-height: 1.6; }
 .hbox ul li:last-child { border-bottom: none; }
 .hbox ul li::before { font-weight: 900; flex-shrink: 0; }
 .hbox.teal ul li::before { content: '✓'; color: var(--teal); }
 .hbox.gold ul li::before { content: '✓'; color: var(--gold); }
 .hbox.coral ul li::before { content: '✗'; color: var(--error); }
 .hbox.mint ul li::before { content: '✓'; color: var(--success); }
-.hbox p { font-size: 0.86rem; color: var(--text); line-height: 1.7; }
+.hbox p { font-size: 0.95rem; color: var(--text); line-height: 1.75; }
 
-/* ── GIFT TABLE ── */
-.gift-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 1rem 0; }
-.gift-table th { background: var(--teal); color: var(--white); padding: 0.65rem 1rem; text-align: left; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
-.gift-table td { padding: 0.65rem 1rem; border-bottom: 1px solid #eee; }
+.gift-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; margin: 1rem 0; }
+.gift-table th { background: var(--teal); color: var(--white); padding: 0.75rem 1rem; text-align: left; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.gift-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; }
 .gift-table tr:nth-child(even) td { background: #f9fafa; }
 .gift-table tr.hl td { background: #fdf6e3; font-weight: 800; }
-.gbadge { background: var(--gold); color: var(--white); font-size: 0.58rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 999px; margin-left: 0.3rem; }
+.gbadge { background: var(--gold); color: var(--white); font-size: 0.65rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 999px; margin-left: 0.3rem; }
 
-/* ── TIERS ── */
 .tier-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 1rem 0; }
 @media(max-width:480px){ .tier-row { grid-template-columns:1fr; } }
-.tier-card { border-radius: 14px; padding: 1.4rem 1rem; text-align: center; position: relative; }
+.tier-card { border-radius: 14px; padding: 1.5rem 1rem; text-align: center; position: relative; }
 .tier-card.t1 { background: linear-gradient(135deg,#e8f4f5,#d0e8ea); }
 .tier-card.t2 { background: linear-gradient(135deg,#f2f0f9,#e2ddf5); }
 .tier-card.t3 { background: linear-gradient(135deg,#fdf6e3,#f5e9c0); }
-.tier-best { position: absolute; top:-1px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--white); font-size:0.55rem; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; padding:0.2rem 0.7rem; border-radius:999px; }
-.tier-name { font-size:0.62rem; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.4rem; }
+.tier-best { position: absolute; top:-1px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--white); font-size:0.6rem; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; padding:0.2rem 0.7rem; border-radius:999px; }
+.tier-name { font-size:0.7rem; font-weight:900; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.4rem; }
 .tier-card.t1 .tier-name{color:var(--teal)} .tier-card.t2 .tier-name{color:#8B7FB8} .tier-card.t3 .tier-name{color:#a07a20}
-.tier-rate { font-size:2.2rem; font-weight:900; line-height:1; margin:0.3rem 0; }
+.tier-rate { font-size:2.5rem; font-weight:900; line-height:1; margin:0.3rem 0; }
 .tier-card.t1 .tier-rate{color:var(--teal)} .tier-card.t2 .tier-rate{color:#8B7FB8} .tier-card.t3 .tier-rate{color:var(--gold)}
-.tier-note { font-size:0.7rem; color:var(--muted); line-height:1.5; }
+.tier-note { font-size:0.85rem; color:var(--muted); line-height:1.5; }
 
-/* ── CHECKLIST ── */
 .checklist { list-style:none; margin:1rem 0; }
-.checklist li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.55rem 0; border-bottom:1px solid #f0f0f0; font-size:0.88rem; line-height:1.6; }
+.checklist li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.95rem; line-height:1.65; }
 .checklist li:last-child { border-bottom:none; }
-.check-num { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.78rem; font-weight:900; flex-shrink:0; margin-top:0.1rem; }
+.check-num { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:900; flex-shrink:0; margin-top:0.1rem; }
 
-/* ── BUTTONS ── */
 .btn-row { display:flex; gap:0.8rem; margin-top:1.8rem; flex-wrap:wrap; }
-.btn { font-family:'Nunito',sans-serif; font-weight:900; font-size:0.88rem; padding:0.9rem 2rem; border-radius:999px; border:none; cursor:pointer; transition:all 0.2s; text-decoration:none; display:inline-block; text-align:center; letter-spacing:0.03em; }
+.btn { font-family:'Nunito',sans-serif; font-weight:900; font-size:0.95rem; padding:0.95rem 2rem; border-radius:999px; border:none; cursor:pointer; transition:all 0.2s; text-decoration:none; display:inline-block; text-align:center; }
 .btn-next { background:var(--teal); color:var(--white); flex:1; }
 .btn-next:hover { background:#1a5254; transform:translateY(-2px); }
 .btn-back { background:var(--cream); color:var(--text); border:2px solid #ddd; }
@@ -109,81 +97,64 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 .btn-gold { background:var(--gold); color:var(--text); flex:1; }
 .btn-gold:hover { background:#b8962e; transform:translateY(-2px); }
 .btn-shopify { background:#96bf48; color:var(--white); flex:1; }
-.btn-shopify:hover { background:#7aaa2e; transform:translateY(-2px); }
-.btn-whatsapp { background:#25D366; color:var(--white); flex:1; }
-.btn-whatsapp:hover { background:#1aad52; transform:translateY(-2px); }
 
-/* ── APPLY PATHS ── */
 .apply-paths { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
 @media(max-width:520px){ .apply-paths{grid-template-columns:1fr;} }
 .apply-path { border-radius:16px; padding:1.5rem; border:2px solid var(--border); cursor:pointer; transition:all 0.2s; text-align:center; }
 .apply-path:hover { border-color:var(--teal); }
 .apply-path.selected { border-color:var(--teal); background:#e8f4f5; }
-.apply-path-icon { font-size:2rem; margin-bottom:0.6rem; }
-.apply-path h3 { font-size:0.95rem; font-weight:900; color:var(--text); margin-bottom:0.4rem; }
-.apply-path p { font-size:0.78rem; color:var(--muted); line-height:1.5; }
-.path-tooltip { font-size:0.7rem; color:var(--teal); font-weight:700; margin-top:0.5rem; cursor:pointer; text-decoration:underline; }
-
-.tooltip-box { background:#f0f7f7; border-radius:10px; padding:0.8rem 1rem; margin-top:0.6rem; font-size:0.78rem; color:var(--text); line-height:1.6; display:none; border:1px solid var(--border); text-align:left; }
+.apply-path-icon { font-size:2.2rem; margin-bottom:0.7rem; }
+.apply-path h3 { font-size:1rem; font-weight:900; color:var(--text); margin-bottom:0.4rem; }
+.apply-path p { font-size:0.9rem; color:var(--muted); line-height:1.6; }
+.path-tooltip { font-size:0.8rem; color:var(--teal); font-weight:700; margin-top:0.5rem; cursor:pointer; text-decoration:underline; }
+.tooltip-box { background:#f0f7f7; border-radius:10px; padding:0.9rem 1rem; margin-top:0.6rem; font-size:0.85rem; color:var(--text); line-height:1.65; display:none; border:1px solid var(--border); text-align:left; }
 .tooltip-box.show { display:block; }
 
-/* ── INLINE FORM ── */
 .inline-form { margin-top:1.5rem; display:none; }
 .inline-form.show { display:block; animation:fadeUp 0.3s ease; }
-.field { margin-bottom:1rem; }
-.field label { display:block; font-size:0.68rem; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.35rem; }
+.field { margin-bottom:1.1rem; }
+.field label { display:block; font-size:0.78rem; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); margin-bottom:0.38rem; }
 .field label .req { color:var(--error); }
 .field input, .field select, .field textarea {
-  width:100%; font-family:'Nunito',sans-serif; font-size:0.92rem;
-  padding:0.7rem 1rem; border:2px solid var(--border); border-radius:10px;
+  width:100%; font-family:'Nunito',sans-serif; font-size:1rem;
+  padding:0.85rem 1rem; border:2px solid var(--border); border-radius:10px;
   outline:none; transition:border-color 0.2s; background:var(--cream); color:var(--text);
 }
 .field input:focus,.field select:focus,.field textarea:focus { border-color:var(--teal); background:var(--white); }
-.field textarea { min-height:80px; resize:vertical; }
-.field .hint { font-size:0.68rem; color:var(--muted); margin-top:0.25rem; }
+.field textarea { min-height:120px; resize:vertical; }
+.field .hint { font-size:0.8rem; color:var(--muted); margin-top:0.3rem; line-height:1.55; }
 .field-row { display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; }
 @media(max-width:480px){ .field-row{grid-template-columns:1fr;} }
 
-/* ── AGREEMENT CHECKBOXES ── */
-.check-group { display:flex; flex-direction:column; gap:0.5rem; margin:0.5rem 0; }
+.check-group { display:flex; flex-direction:column; gap:0.6rem; margin:0.5rem 0; }
 .check-item { display:flex; align-items:flex-start; gap:0.7rem; cursor:pointer; }
-.check-item input[type="checkbox"] { width:18px; height:18px; accent-color:var(--teal); cursor:pointer; flex-shrink:0; margin-top:2px; }
-.check-item span { font-size:0.85rem; color:var(--text); line-height:1.5; }
+.check-item input[type="checkbox"] { width:20px; height:20px; accent-color:var(--teal); cursor:pointer; flex-shrink:0; margin-top:2px; }
+.check-item span { font-size:0.95rem; color:var(--text); line-height:1.55; }
 
-/* ── MESSAGES ── */
-.msg { border-radius:12px; padding:1rem 1.2rem; margin:1rem 0; font-size:0.86rem; line-height:1.6; display:none; }
-.msg.success { background:#edf7f2; border:1px solid var(--success); color:#1a5234; }
+.msg { border-radius:12px; padding:1rem 1.2rem; margin:1rem 0; font-size:0.95rem; line-height:1.65; display:none; }
 .msg.error { background:#fdf0ed; border:1px solid var(--error); color:#a03a20; }
 .msg.show { display:block; }
 
-/* ── SUCCESS SCREEN ── */
 .success-screen { text-align:center; padding:2rem 1rem; display:none; }
 .success-screen.show { display:block; animation:fadeUp 0.4s ease; }
 .success-icon { font-size:4rem; margin-bottom:1rem; }
-.success-screen h2 { font-size:1.8rem; font-weight:900; color:var(--teal); margin-bottom:0.8rem; }
-.success-screen p { font-size:1rem; color:var(--muted); line-height:1.7; max-width:380px; margin:0 auto; }
+.success-screen h2 { font-size:2rem; font-weight:900; color:var(--teal); margin-bottom:0.8rem; }
+.success-screen p { font-size:1.05rem; color:var(--muted); line-height:1.75; max-width:400px; margin:0 auto; }
 
-/* ── DIVIDER ── */
-.form-divider { text-align:center; margin:1.2rem 0; font-size:0.75rem; font-weight:800; color:var(--muted); letter-spacing:0.1em; position:relative; }
+.form-divider { text-align:center; margin:1.2rem 0; font-size:0.82rem; font-weight:800; color:var(--muted); letter-spacing:0.1em; position:relative; }
 .form-divider::before,.form-divider::after { content:''; position:absolute; top:50%; width:40%; height:1px; background:var(--border); }
-.form-divider::before { left:0; }
-.form-divider::after { right:0; }
+.form-divider::before { left:0; } .form-divider::after { right:0; }
 
-/* ══════════════════════════════════
-   PRINTABLE INFOGRAPHIC
-══════════════════════════════════ */
 #printable { display:none; }
-
 @media print {
   body > .app { display:none !important; }
   #printable { display:block !important; }
   @page { size:A4; margin:0; }
 }
-
 .ig { width:210mm; min-height:297mm; font-family:'Nunito',sans-serif; background:#fff; }
 .ig-header { background:linear-gradient(135deg,#1a4245,#266266); padding:1.8rem 2.5rem 1.3rem; color:#fff; position:relative; overflow:hidden; }
 .ig-header::after { content:'✦ ✦ ✦'; position:absolute; bottom:.5rem; right:2rem; color:rgba(201,168,76,.25); font-size:1.1rem; letter-spacing:.5rem; }
-.ig-logo { font-size:1.2rem; font-weight:900; letter-spacing:.06em; }
+.ig-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; letter-spacing:.06em; }
 .ig-logo span { color:#C9A84C; }
 .ig-tagline { font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.45); margin-top:.1rem; }
 .ig-title { font-size:1.9rem; font-weight:900; margin-top:.7rem; line-height:1.1; }
@@ -202,8 +173,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 .ig-step h4 { font-size:.58rem; font-weight:900; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.2rem; line-height:1.2; }
 .ig-step p { font-size:.57rem; line-height:1.4; opacity:.7; }
 .ig-step.s1{background:#e8f4f5;color:#266266} .ig-step.s2{background:#f2f0f9;color:#8B7FB8}
-.ig-step.s3{background:#fdf0ed;color:#E8735A} .ig-step.s4{background:#fdf6e3;color:#a07a20}
-.ig-step.s5{background:#edf7f2;color:#5BAD8F}
+.ig-step.s3{background:#fdf0ed;color:#E8735A} .ig-step.s4{background:#fdf6e3;color:#a07a20} .ig-step.s5{background:#edf7f2;color:#5BAD8F}
 .ig-two-col { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:.8rem; }
 .ig-tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:.4rem; margin-bottom:.5rem; }
 .ig-tier { border-radius:9px; padding:.7rem; text-align:center; }
@@ -221,27 +191,24 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 .ig-gift-row{display:flex;align-items:center;gap:.7rem;padding:.38rem .7rem;border-radius:7px;margin-bottom:.22rem;font-size:.66rem}
 .g1{background:#f0f7f7} .g2{background:#f5f3fc} .g3{background:#fff8ee} .g4{background:#fff3ef} .g5{background:#edf7f2}
 .ig-gift-amount{font-weight:900;font-size:.72rem;min-width:42px;color:#266266}
-.ig-gift-desc{flex:1;color:#2d4a4c;line-height:1.4}
-.ig-gift-emoji{font-size:.82rem}
+.ig-gift-desc{flex:1;color:#2d4a4c;line-height:1.4} .ig-gift-emoji{font-size:.82rem}
 .ig-footer{background:#1a2e30;padding:.9rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
 .ig-contact{color:rgba(255,255,255,.65);font-size:.6rem;line-height:1.7}
 .ig-contact strong{color:#C9A84C;font-size:.65rem;display:block;letter-spacing:.08em;text-transform:uppercase}
 .ig-cta-box{background:#C9A84C;color:#1a1a1a;padding:.45rem 1rem;border-radius:999px;font-size:.62rem;font-weight:900;letter-spacing:.08em;text-align:center;line-height:1.5}
 
-/* ── MODAL ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;padding:1rem;overflow-y:auto;}
 .modal-overlay.open{display:flex;align-items:flex-start;justify-content:center;padding-top:1.5rem;}
 .modal-box{background:var(--white);border-radius:20px;max-width:860px;width:100%;padding:1.8rem;position:relative;}
 .modal-close{position:absolute;top:1rem;right:1rem;background:var(--cream);border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:1rem;font-weight:900;color:var(--text);display:flex;align-items:center;justify-content:center;}
-.modal-title{font-size:1.3rem;font-weight:900;color:var(--text);margin-bottom:.3rem;}
-.modal-sub{font-size:.82rem;color:var(--muted);margin-bottom:1.2rem;}
+.modal-title{font-size:1.4rem;font-weight:900;color:var(--text);margin-bottom:.3rem;}
+.modal-sub{font-size:0.9rem;color:var(--muted);margin-bottom:1.2rem;}
 .ig-preview-wrap{overflow:auto;background:#f0f0f0;border-radius:12px;padding:1rem;}
 .ig-preview-wrap .ig{transform-origin:top left;transform:scale(0.58);width:210mm;margin-bottom:-44%;}
 .modal-actions{display:flex;gap:1rem;margin-top:1.2rem;flex-wrap:wrap;}
 </style>
 </head>
 <body>
-
 <div class="app">
   <div class="logo-bar">
     <div class="logo-text">Jewel<span>Hub™</span></div>
@@ -258,7 +225,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
     <div class="pb" id="pb6"></div>
   </div>
 
-  <!-- ═══ STEP 0: WELCOME ═══ -->
+  <!-- STEP 0: WELCOME -->
   <div class="card active" id="step0">
     <div class="hero-banner">
       <h1>Welcome to the<br><span>JewelHub™ Collab</span><br>Programme</h1>
@@ -266,9 +233,13 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
       <div class="hero-pills">
         <span class="hero-pill">🎁 We gift first</span>
         <span class="hero-pill">💷 Earn up to 20%</span>
+        <span class="hero-pill">🇬🇧 UK creators only</span>
         <span class="hero-pill">✦ No follower minimum</span>
-        <span class="hero-pill">🇬🇧 UK brand</span>
       </div>
+    </div>
+    <div class="hbox warning">
+      <h3>🇬🇧 UK Creators Only</h3>
+      <p>We currently collaborate with UK-based creators only due to postage costs. If you are outside the UK, we are unable to process your application at this time.</p>
     </div>
     <div class="hbox teal">
       <h3>🔑 The one thing to remember</h3>
@@ -279,7 +250,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
     </div>
   </div>
 
-  <!-- ═══ STEP 1: WHAT YOU GET ═══ -->
+  <!-- STEP 1: WHAT YOU GET -->
   <div class="card" id="step1">
     <div class="step-badge" style="background:#e8f4f5;color:var(--teal)">🎁 Step 1 of 5 — What You Receive</div>
     <h2>Here's what arrives at your door</h2>
@@ -288,7 +259,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
       <h3>📦 Your Gifted Order Includes</h3>
       <ul>
         <li>Curated JewelHub™ pieces — chosen by us to suit your style</li>
-        <li>Premium packaging — velvet pouch, jewellery box, or gift bag</li>
+        <li>Premium packaging — velvet pouch, jewellery box, or gold mylar gift bag</li>
         <li>Free MiniCharm™ × 2 included automatically</li>
         <li>Personal note from the JewelHub™ team</li>
         <li>Care guide and product information</li>
@@ -314,28 +285,15 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
     </div>
   </div>
 
-  <!-- ═══ STEP 2: HOW YOU EARN ═══ -->
+  <!-- STEP 2: HOW YOU EARN -->
   <div class="card" id="step2">
     <div class="step-badge" style="background:#f2f0f9;color:#8B7FB8">💷 Step 2 of 5 — Commission & Earnings</div>
     <h2>How you earn money</h2>
     <p class="sub">You get a personalised link. Every time someone buys through it within 90 days, you earn commission — tracked automatically.</p>
     <div class="tier-row">
-      <div class="tier-card t1">
-        <div class="tier-name">Starter</div>
-        <div class="tier-rate">10%</div>
-        <div class="tier-note">Everyone starts here. Open to all.</div>
-      </div>
-      <div class="tier-card t2">
-        <div class="tier-name">Growth</div>
-        <div class="tier-rate">15%</div>
-        <div class="tier-note">Invited when your results grow.</div>
-      </div>
-      <div class="tier-card t3">
-        <div class="tier-best">Best</div>
-        <div class="tier-name">Partnership</div>
-        <div class="tier-rate">20%</div>
-        <div class="tier-note">Long-term partners only.</div>
-      </div>
+      <div class="tier-card t1"><div class="tier-name">Starter</div><div class="tier-rate">10%</div><div class="tier-note">Everyone starts here. Open to all approved UK creators.</div></div>
+      <div class="tier-card t2"><div class="tier-name">Growth</div><div class="tier-rate">15%</div><div class="tier-note">Invited when your results start growing.</div></div>
+      <div class="tier-card t3"><div class="tier-best">Best</div><div class="tier-name">Partnership</div><div class="tier-rate">20%</div><div class="tier-note">Long-term partners only.</div></div>
     </div>
     <div class="hbox teal">
       <h3>🔗 Your Personalised Link</h3>
@@ -355,99 +313,88 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
     </div>
   </div>
 
-  <!-- ═══ STEP 3: WHAT TO DO ═══ -->
+  <!-- STEP 3: WHAT TO DO -->
   <div class="card" id="step3">
-    <div class="step-badge" style="background:#fdf6e3;color:#a07a20">📋 Step 3 of 5 — Your Content Job</div>
-    <h2>What you actually need to do</h2>
-    <p class="sub">We keep it simple. One honest piece of content. That's genuinely it.</p>
+    <div class="step-badge" style="background:#fdf6e3;color:#a07a20">📋 Step 3 of 5 — Your Requirements</div>
+    <h2>What you need to do</h2>
+    <p class="sub">Clear requirements. No surprises. Please read carefully before applying.</p>
     <ul class="checklist">
-      <li><div class="check-num" style="background:#e8f4f5;color:var(--teal)">1</div><div><strong>Receive your gifted order</strong> — unbox it, try it on, live with it for a few days.</div></li>
-      <li><div class="check-num" style="background:#f2f0f9;color:#8B7FB8">2</div><div><strong>Create one honest piece of content</strong> — blog post, TikTok, Reel, Stories, or YouTube. Your genuine opinion, not a script from us.</div></li>
-      <li><div class="check-num" style="background:#fdf0ed;color:var(--error)">3</div><div><strong>Tag @jewelhubcouk</strong> and use <strong>#JewelHubUK</strong> in your post.</div></li>
-      <li><div class="check-num" style="background:#fdf6e3;color:#a07a20">4</div><div><strong>Add your affiliate link</strong> in your bio or caption — this is how you earn.</div></li>
-      <li><div class="check-num" style="background:#edf7f2;color:var(--success)">5</div><div><strong>Disclose it's gifted</strong> — "gifted by @jewelhubcouk" — as required by UK ASA guidelines.</div></li>
-      <li><div class="check-num" style="background:#e8f4f5;color:var(--teal)">6</div><div><strong>If you write a blog post</strong>, also submit a Judge.me review on the product page — takes 2 minutes.</div></li>
+      <li><div class="check-num" style="background:#e8f4f5;color:var(--teal)">1</div><div><strong>Receive your gifted order</strong> — unbox it, try it on, wear it for a few days before creating content.</div></li>
+      <li><div class="check-num" style="background:#f2f0f9;color:#8B7FB8">2</div><div><strong>Create two pieces of content minimum</strong> — for example a TikTok or Reel PLUS an Instagram post, or a blog post PLUS a social share. One piece is not enough.</div></li>
+      <li><div class="check-num" style="background:#fdf0ed;color:var(--error)">3</div><div><strong>Submit a Judge.me review — compulsory for all creators.</strong> Go to the product page on jewelhub.co.uk, scroll to reviews, and leave your honest review. This is not optional.</div></li>
+      <li><div class="check-num" style="background:#fdf6e3;color:#a07a20">4</div><div><strong>Tag @jewelhubcouk</strong> and use <strong>#JewelHubUK</strong> in every post.</div></li>
+      <li><div class="check-num" style="background:#edf7f2;color:var(--success)">5</div><div><strong>Share your affiliate link</strong> in your bio or caption — your audience gets 10% off and you earn commission on every sale.</div></li>
+      <li><div class="check-num" style="background:#e8f4f5;color:var(--teal)">6</div><div><strong>Disclose it's gifted</strong> — "gifted by @jewelhubcouk" — as required by UK ASA guidelines.</div></li>
+      <li><div class="check-num" style="background:#f2f0f9;color:#8B7FB8">7</div><div><strong>Submit your content links</strong> via our submission form once everything is live. This activates your commission tracking.</div></li>
     </ul>
     <div class="hbox coral">
-      <h3>❌ What we NEVER ask for</h3>
+      <h3>❌ What we never ask for</h3>
       <ul>
-        <li>A minimum follower count</li>
         <li>Scripted or positive-only reviews</li>
         <li>Mandatory posting schedule</li>
         <li>Complicated campaign briefs</li>
+        <li>Purchasing before collaborating</li>
       </ul>
     </div>
     <div class="btn-row">
       <button class="btn btn-back" onclick="goTo(2)">← Back</button>
-      <button class="btn btn-next" onclick="goTo(4)">Next: About You →</button>
+      <button class="btn btn-next" onclick="goTo(4)">Next: Your Application →</button>
     </div>
   </div>
 
-  <!-- ═══ STEP 4: ABOUT YOU ═══ -->
+  <!-- STEP 4: APPLICATION -->
   <div class="card" id="step4">
-    <div class="step-badge" style="background:#edf7f2;color:var(--success)">👋 Step 4 of 5 — Tell Us About You</div>
-    <h2>A little about you</h2>
-    <p class="sub">This helps us match you to the right products and tier. Takes about 2 minutes.</p>
+    <div class="step-badge" style="background:#edf7f2;color:var(--success)">👋 Step 4 of 5 — Your Application</div>
+    <h2>Tell us about you</h2>
+    <p class="sub">We review every application personally. Please answer all questions honestly — this is how we decide who to approve.</p>
+
+    <div class="hbox warning" style="margin-bottom:1.5rem;">
+      <h3>🇬🇧 UK creators only</h3>
+      <p>We are unable to gift creators based outside the United Kingdom. Please only apply if you are UK-based.</p>
+    </div>
 
     <div class="field-row">
-      <div class="field">
-        <label>First name <span class="req">*</span></label>
-        <input type="text" id="f_first" placeholder="e.g. Sophie">
-      </div>
-      <div class="field">
-        <label>Last name <span class="req">*</span></label>
-        <input type="text" id="f_last" placeholder="e.g. Taylor">
-      </div>
+      <div class="field"><label>First name <span class="req">*</span></label><input type="text" id="f_first" placeholder="e.g. Sophie"></div>
+      <div class="field"><label>Last name <span class="req">*</span></label><input type="text" id="f_last" placeholder="e.g. Taylor"></div>
     </div>
-    <div class="field">
-      <label>Email address <span class="req">*</span></label>
-      <input type="email" id="f_email" placeholder="hello@yourblog.com">
-    </div>
+    <div class="field"><label>Email address <span class="req">*</span></label><input type="email" id="f_email" placeholder="hello@yourblog.com"></div>
     <div class="field">
       <label>WhatsApp number</label>
       <input type="text" id="f_whatsapp" placeholder="+44 7700 000000">
-      <div class="hint">We'll WhatsApp you about your gifted order after approval.</div>
+      <div class="hint">We'll WhatsApp you within 48 hours after approval.</div>
     </div>
     <div class="field">
-      <label>Blog or website URL</label>
-      <input type="url" id="f_blog" placeholder="https://yourblog.com">
+      <label>Are you based in the UK? <span class="req">*</span></label>
+      <select id="f_country">
+        <option value="">— Select —</option>
+        <option value="UK">Yes — I am based in the United Kingdom</option>
+        <option value="Non-UK">No — I am based outside the UK</option>
+      </select>
     </div>
-    <div class="field">
-      <label>Instagram handle</label>
-      <input type="text" id="f_instagram" placeholder="@yourhandle">
-    </div>
+
+    <hr style="border:none;border-top:1px solid #eee;margin:1.5rem 0;">
+
+    <div class="field"><label>Blog or website URL</label><input type="url" id="f_blog" placeholder="https://yourblog.com"></div>
+    <div class="field"><label>Instagram handle</label><input type="text" id="f_instagram" placeholder="@yourhandle"></div>
     <div class="field-row">
-      <div class="field">
-        <label>TikTok handle</label>
-        <input type="text" id="f_tiktok" placeholder="@yourhandle">
-      </div>
-      <div class="field">
-        <label>YouTube channel</label>
-        <input type="url" id="f_youtube" placeholder="https://youtube.com/@...">
-      </div>
+      <div class="field"><label>TikTok handle</label><input type="text" id="f_tiktok" placeholder="@yourhandle"></div>
+      <div class="field"><label>YouTube channel</label><input type="url" id="f_youtube" placeholder="https://youtube.com/@..."></div>
     </div>
     <div class="field-row">
       <div class="field">
         <label>Primary platform <span class="req">*</span></label>
         <select id="f_platform">
           <option value="">— Select —</option>
-          <option>Blog / Website</option>
-          <option>Instagram</option>
-          <option>TikTok</option>
-          <option>YouTube</option>
-          <option>Pinterest</option>
-          <option>Multiple equally</option>
+          <option>Blog / Website</option><option>Instagram</option><option>TikTok</option>
+          <option>YouTube</option><option>Pinterest</option><option>Multiple equally</option>
         </select>
       </div>
       <div class="field">
         <label>Audience size <span class="req">*</span></label>
         <select id="f_audience">
           <option value="">— Select —</option>
-          <option>Under 1,000</option>
-          <option>1,000 – 5,000</option>
-          <option>5,000 – 20,000</option>
-          <option>20,000 – 100,000</option>
-          <option>100,000+</option>
+          <option>Under 1,000</option><option>1,000 – 5,000</option><option>5,000 – 20,000</option>
+          <option>20,000 – 100,000</option><option>100,000+</option>
         </select>
       </div>
     </div>
@@ -455,61 +402,69 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
       <label>Your content niche <span class="req">*</span></label>
       <select id="f_niche">
         <option value="">— Select —</option>
-        <option>Jewellery & accessories</option>
-        <option>Fashion & style</option>
-        <option>Lifestyle & wellbeing</option>
-        <option>Gifting & occasions</option>
-        <option>Chronic illness / health</option>
-        <option>Mum / family life</option>
-        <option>Beauty & self-care</option>
-        <option>Gen Z culture</option>
-        <option>Other</option>
+        <option>Jewellery & accessories</option><option>Fashion & style</option>
+        <option>Lifestyle & wellbeing</option><option>Gifting & occasions</option>
+        <option>Chronic illness / health</option><option>Mum / family life</option>
+        <option>Beauty & self-care</option><option>Gen Z culture</option><option>Other</option>
       </select>
     </div>
+
+    <hr style="border:none;border-top:1px solid #eee;margin:1.5rem 0;">
+
     <div class="field">
-      <label>Which product interests you most?</label>
-      <select id="f_product">
-        <option value="">— Optional —</option>
-        <option>MiniCharm™ — swappable story charms</option>
-        <option>FortunaLink™ — modular foundation bracelet</option>
-        <option>DuoTone™ — dual tone contrast jewellery</option>
-        <option>ZincJewel™ — smart luxury zinc pieces</option>
-        <option>NameBead™ — personalised name beads</option>
-        <option>925 Sterling Silver collection</option>
-        <option>14k / 18k Fine Jewellery</option>
-        <option>Happy for JewelHub to curate</option>
-      </select>
+      <label>Link to your best recent post, video, or reel <span class="req">*</span></label>
+      <input type="url" id="f_sample" placeholder="https://yourblog.com/your-best-post">
+      <div class="hint">Share something you're proud of — a blog post, TikTok, Reel, or YouTube video. This is how we assess your content quality.</div>
     </div>
+
     <div class="field">
-      <label>Tell us about yourself and your audience</label>
-      <textarea id="f_bio" placeholder="e.g. I run a UK lifestyle blog focused on accessible self-care. My audience are mainly women aged 25-40 who love meaningful gifts..."></textarea>
-      <div class="hint">Optional but helps us pick the perfect products for you.</div>
+      <label>Have you purchased from JewelHub before?</label>
+      <select id="f_customer">
+        <option value="">— Select —</option>
+        <option value="Yes — existing customer">Yes — I am already a JewelHub customer</option>
+        <option value="No — new discovery">No — I discovered JewelHub through this programme</option>
+      </select>
+      <div class="hint">Existing customers are fast-tracked for approval.</div>
+    </div>
+
+    <div class="field">
+      <label>Which JewelHub™ product would you feature and why? <span class="req">*</span></label>
+      <textarea id="f_product_why" placeholder="e.g. I would feature the MiniCharm™ Sky Pack because my audience loves symbolic jewellery. I already create content around meaningful accessories and would film an unboxing Reel showing each charm's meaning, then write a blog post reviewing the quality and wearability across different base options..."></textarea>
+      <div class="hint">Minimum 50 words. This is one of our most important questions. Generic answers will not be approved.</div>
+    </div>
+
+    <div class="field">
+      <label>How would you create content around your gifted order? <span class="req">*</span></label>
+      <textarea id="f_content_plan" placeholder="e.g. I would create a TikTok unboxing video showing the packaging and each piece, followed by an Instagram Reel styling the bracelet three different ways. I would also write a blog post reviewing the MiniCharm system and submit a Judge.me review on the product page..."></textarea>
+      <div class="hint">Tell us your platform, format, and creative angle. Remember — two pieces minimum plus a compulsory Judge.me review.</div>
     </div>
 
     <div class="btn-row">
       <button class="btn btn-back" onclick="goTo(3)">← Back</button>
-      <button class="btn btn-next" onclick="goTo(5)">Next: Apply →</button>
+      <button class="btn btn-next" onclick="validateStep4()">Next: Confirm & Apply →</button>
     </div>
   </div>
 
-  <!-- ═══ STEP 5: APPLY ═══ -->
+  <!-- STEP 5: APPLY -->
   <div class="card" id="step5">
-    <div class="step-badge" style="background:#fdf0ed;color:var(--error)">✅ Step 5 of 5 — Apply</div>
+    <div class="step-badge" style="background:#fdf0ed;color:var(--error)">✅ Step 5 of 5 — Confirm & Apply</div>
     <h2>Before you apply</h2>
-    <p class="sub">Please confirm you've read and agree to the following — it keeps the programme fair for everyone.</p>
+    <p class="sub">Please confirm you have read and agree to all of the following. We take these seriously.</p>
 
     <div class="hbox teal" style="margin-bottom:1.5rem;">
       <h3>✅ I confirm that:</h3>
-      <div class="check-group" style="margin-top:0.5rem;">
-        <label class="check-item"><input type="checkbox" id="ag1"><span>I will create at least one honest piece of content per gifted order</span></label>
-        <label class="check-item"><input type="checkbox" id="ag2"><span>I will disclose gifted collaborations as required by UK ASA guidelines</span></label>
-        <label class="check-item"><input type="checkbox" id="ag3"><span>If I write a blog post, I will also submit a Judge.me review on the product page</span></label>
-        <label class="check-item"><input type="checkbox" id="ag4"><span>I will share my personalised affiliate link in my content</span></label>
-        <label class="check-item"><input type="checkbox" id="ag5"><span>I understand JewelHub™ curates the gifted order — I don't choose the specific products</span></label>
+      <div class="check-group" style="margin-top:0.6rem;">
+        <label class="check-item"><input type="checkbox" id="ag1"><span>I am based in the United Kingdom</span></label>
+        <label class="check-item"><input type="checkbox" id="ag2"><span>I am an active content creator with a public profile and a genuine audience</span></label>
+        <label class="check-item"><input type="checkbox" id="ag3"><span>I will create a minimum of two pieces of content per gifted order</span></label>
+        <label class="check-item"><input type="checkbox" id="ag4"><span>I will submit a Judge.me review on the JewelHub product page — this is compulsory, not optional</span></label>
+        <label class="check-item"><input type="checkbox" id="ag5"><span>I will share my personalised affiliate link in my content</span></label>
+        <label class="check-item"><input type="checkbox" id="ag6"><span>I will disclose gifted collaborations clearly as required by UK ASA guidelines</span></label>
+        <label class="check-item"><input type="checkbox" id="ag7"><span>I understand JewelHub™ curates the gifted order — I do not choose the specific products</span></label>
       </div>
     </div>
 
-    <p style="font-size:0.88rem;font-weight:900;color:var(--text);margin-bottom:1rem;">How would you like to apply?</p>
+    <p style="font-size:1rem;font-weight:900;color:var(--text);margin-bottom:1rem;">How would you like to apply?</p>
 
     <div class="apply-paths">
       <div class="apply-path" id="pathA" onclick="selectPath('A')">
@@ -517,7 +472,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
         <h3>Apply via Shopify Collabs</h3>
         <p>For creators already on Shopify Collabs or who want to join directly.</p>
         <div class="path-tooltip" onclick="event.stopPropagation(); toggleTooltip()">What is Shopify Collabs? ▾</div>
-        <div class="tooltip-box" id="tooltipBox">Shopify Collabs is a free creator platform that manages your affiliate link, commission tracking, and monthly payments automatically. It takes about 5 minutes to set up a free account.</div>
+        <div class="tooltip-box" id="tooltipBox">Shopify Collabs is a free creator platform that manages your affiliate link, commission tracking, and monthly payments automatically. Takes about 5 minutes to set up.</div>
       </div>
       <div class="apply-path" id="pathB" onclick="selectPath('B')">
         <div class="apply-path-icon">✉️</div>
@@ -526,18 +481,16 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
       </div>
     </div>
 
-    <!-- PATH A: Shopify Collabs button -->
     <div id="pathAContent" style="display:none; text-align:center; margin-top:1rem;">
       <a href="https://api.collabs.shopify.com/creator/signup/community_application/5f7f31331a3889d1?origin=THEME_EXTENSION" target="_blank" class="btn btn-shopify" style="display:inline-block; text-decoration:none;">Apply via Shopify Collabs →</a>
-      <p style="font-size:0.75rem;color:var(--muted);margin-top:0.8rem;">Opens in a new tab. Come back here to print your guide afterwards.</p>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:0.8rem;">Opens in a new tab. Come back here to print your guide afterwards.</p>
     </div>
 
-    <!-- PATH B: Inline form submission -->
     <div class="inline-form" id="pathBContent">
       <div class="form-divider">Your details are already saved from Step 4</div>
       <div class="hbox gold" style="margin-bottom:1rem;">
         <h3>👇 Just hit submit — we'll do the rest</h3>
-        <p>We'll WhatsApp and email you within 48 hours about your gifted order. No further steps needed from you.</p>
+        <p>We'll WhatsApp and email you within 48 hours. Nothing else to do.</p>
       </div>
       <div class="msg error" id="formError"></div>
       <button class="btn btn-gold" onclick="submitApplication()" id="submitBtn" style="width:100%;">Submit My Application →</button>
@@ -550,25 +503,23 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 
     <div class="success-screen" id="successScreen">
       <div class="success-icon">🎉</div>
-      <h2>You're in!</h2>
-      <p>We'll WhatsApp and email you within 48 hours about your gifted order. Nothing else to do — just watch your inbox and WhatsApp.</p>
+      <h2>Application Submitted!</h2>
+      <p>We'll review your application and be in touch within 48 hours via WhatsApp and email. Nothing else to do.</p>
       <div style="margin-top:1.5rem;">
         <button class="btn btn-gold" onclick="openPreview()" style="display:inline-block;">🖨️ Print Your Personalised Guide</button>
       </div>
     </div>
   </div>
 
-</div><!-- end .app -->
+</div>
 
-<!-- ═══ PRINT PREVIEW MODAL ═══ -->
+<!-- MODAL -->
 <div class="modal-overlay" id="previewModal">
   <div class="modal-box">
     <button class="modal-close" onclick="closePreview()">✕</button>
     <div class="modal-title">Your Personalised Collab Guide</div>
-    <p class="modal-sub">Your details are filled in. Click Print to save as PDF or print.</p>
-    <div class="ig-preview-wrap">
-      <div class="ig" id="previewContent"></div>
-    </div>
+    <p class="modal-sub">Click Print to save as PDF or print.</p>
+    <div class="ig-preview-wrap"><div class="ig" id="previewContent"></div></div>
     <div class="modal-actions">
       <button class="btn btn-gold" onclick="doPrint()" style="flex:1;">🖨️ Print / Save as PDF</button>
       <button class="btn btn-back" onclick="closePreview()">← Close</button>
@@ -576,213 +527,206 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
   </div>
 </div>
 
-<div id="printable">
-  <div class="ig" id="printContent"></div>
-</div>
+<div id="printable"><div class="ig" id="printContent"></div></div>
 
 <script>
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrQNzlAF2KF9LYl0JW8XUDyFv6wdGaNJjPizZVvyTUFhcMEbhv9wvZO47Em7WDGm_NLA/exec';
-
+const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
 let currentStep = 0;
-const labels = ['Welcome','Step 1 of 5 — What You Receive','Step 2 of 5 — How You Earn','Step 3 of 5 — What To Do','Step 4 of 5 — About You','Step 5 of 5 — Apply'];
+const labels = ['Welcome','Step 1 of 5 — What You Receive','Step 2 of 5 — How You Earn','Step 3 of 5 — What To Do','Step 4 of 5 — Your Application','Step 5 of 5 — Confirm & Apply'];
 
 function goTo(n) {
-  document.getElementById('step' + currentStep).classList.remove('active');
-  document.getElementById('step' + n).classList.add('active');
+  document.getElementById('step'+currentStep).classList.remove('active');
+  document.getElementById('step'+n).classList.add('active');
   currentStep = n;
   document.getElementById('progressLabel').textContent = labels[n];
-  for (let i = 0; i < 6; i++) {
-    const pb = document.getElementById('pb' + (i+1));
-    if (!pb) continue;
+  for(let i=0;i<6;i++){
+    const pb=document.getElementById('pb'+(i+1));
+    if(!pb)continue;
     pb.classList.remove('active','done');
-    if (i < n) pb.classList.add('done');
-    else if (i === n) pb.classList.add('active');
+    if(i<n)pb.classList.add('done');
+    else if(i===n)pb.classList.add('active');
   }
   window.scrollTo(0,0);
 }
 
-function selectPath(path) {
-  document.getElementById('pathA').classList.toggle('selected', path === 'A');
-  document.getElementById('pathB').classList.toggle('selected', path === 'B');
-  document.getElementById('pathAContent').style.display = path === 'A' ? 'block' : 'none';
-  document.getElementById('pathBContent').classList.toggle('show', path === 'B');
+function validateStep4() {
+  const country = document.getElementById('f_country').value;
+  if(country==='Non-UK'){
+    alert('Sorry — we are currently only able to collaborate with UK-based creators due to postage costs. Thank you for your interest in JewelHub™!');
+    return;
+  }
+  const first=document.getElementById('f_first').value.trim();
+  const email=document.getElementById('f_email').value.trim();
+  const platform=document.getElementById('f_platform').value;
+  const sample=document.getElementById('f_sample').value.trim();
+  const productWhy=document.getElementById('f_product_why').value.trim();
+  const contentPlan=document.getElementById('f_content_plan').value.trim();
+  if(!first||!email||!platform||!sample||!productWhy||!contentPlan){
+    alert('Please fill in all required fields marked with * before continuing.');
+    return;
+  }
+  if(productWhy.split(' ').length<30){
+    alert('Please expand your answer to "Which product would you feature and why?" — we need at least 50 words to assess your application properly.');
+    return;
+  }
+  goTo(5);
 }
 
-function toggleTooltip() {
-  document.getElementById('tooltipBox').classList.toggle('show');
+function selectPath(path){
+  document.getElementById('pathA').classList.toggle('selected',path==='A');
+  document.getElementById('pathB').classList.toggle('selected',path==='B');
+  document.getElementById('pathAContent').style.display=path==='A'?'block':'none';
+  document.getElementById('pathBContent').classList.toggle('show',path==='B');
 }
 
-async function submitApplication() {
-  const btn = document.getElementById('submitBtn');
-  const errorEl = document.getElementById('formError');
+function toggleTooltip(){document.getElementById('tooltipBox').classList.toggle('show');}
+
+async function submitApplication(){
+  const btn=document.getElementById('submitBtn');
+  const errorEl=document.getElementById('formError');
   errorEl.classList.remove('show');
-
-  // Check agreements
-  const agreements = ['ag1','ag2','ag3','ag4','ag5'];
-  for (const id of agreements) {
-    if (!document.getElementById(id).checked) {
-      errorEl.textContent = '❌ Please tick all agreement boxes before submitting.';
+  const agreements=['ag1','ag2','ag3','ag4','ag5','ag6','ag7'];
+  for(const id of agreements){
+    if(!document.getElementById(id).checked){
+      errorEl.textContent='Please tick all confirmation boxes before submitting.';
       errorEl.classList.add('show');
       return;
     }
   }
-
-  const first = document.getElementById('f_first').value.trim();
-  const email = document.getElementById('f_email').value.trim();
-  if (!first || !email) {
-    errorEl.textContent = '❌ Please fill in your name and email in Step 4 before submitting.';
-    errorEl.classList.add('show');
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-
-  const data = {
-    formType: 'Application',
-    timestamp: new Date().toLocaleString('en-GB'),
-    firstName: first,
-    lastName: document.getElementById('f_last').value,
-    email: email,
-    whatsapp: document.getElementById('f_whatsapp').value,
-    blogUrl: document.getElementById('f_blog').value,
-    instagram: document.getElementById('f_instagram').value,
-    tiktok: document.getElementById('f_tiktok').value,
-    youtube: document.getElementById('f_youtube').value,
-    primaryPlatform: document.getElementById('f_platform').value,
-    audienceSize: document.getElementById('f_audience').value,
-    niche: document.getElementById('f_niche').value,
-    productInterest: document.getElementById('f_product').value,
-    bio: document.getElementById('f_bio').value,
-    applyMethod: 'Direct Form (non-Shopify Collabs)'
+  btn.disabled=true;
+  btn.textContent='Sending...';
+  const data={
+    formType:'Application',
+    timestamp:new Date().toLocaleString('en-GB'),
+    firstName:document.getElementById('f_first').value,
+    lastName:document.getElementById('f_last').value,
+    email:document.getElementById('f_email').value,
+    whatsapp:document.getElementById('f_whatsapp').value,
+    country:document.getElementById('f_country').value,
+    blogUrl:document.getElementById('f_blog').value,
+    instagram:document.getElementById('f_instagram').value,
+    tiktok:document.getElementById('f_tiktok').value,
+    youtube:document.getElementById('f_youtube').value,
+    primaryPlatform:document.getElementById('f_platform').value,
+    audienceSize:document.getElementById('f_audience').value,
+    niche:document.getElementById('f_niche').value,
+    samplePost:document.getElementById('f_sample').value,
+    existingCustomer:document.getElementById('f_customer').value,
+    productWhy:document.getElementById('f_product_why').value,
+    contentPlan:document.getElementById('f_content_plan').value,
+    applyMethod:'Direct Form'
   };
-
-  try {
-const formData = new FormData();
-formData.append('data', JSON.stringify(data));
-await fetch(APPS_SCRIPT_URL, {
-  method: 'POST',
-  mode: 'no-cors',
-  body: formData
-});
-    document.getElementById('pathBContent').style.display = 'none';
-    document.getElementById('pathAContent').style.display = 'none';
-    document.getElementById('pathA').style.display = 'none';
-    document.getElementById('pathB').style.display = 'none';
-    document.querySelector('.apply-paths').style.display = 'none';
-    document.querySelector('#step5 p.sub').style.display = 'none';
-    document.querySelector('#step5 h2').style.display = 'none';
-    document.querySelector('#step5 .hbox').style.display = 'none';
-    document.querySelector('#step5 .step-badge').style.display = 'none';
-    document.querySelector('#step5 .btn-row').style.display = 'none';
-    document.querySelector('[style*="font-size:0.88rem;font-weight:900"]') && (document.querySelector('[style*="font-size:0.88rem;font-weight:900"]').style.display = 'none');
+  try{
+    await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    document.getElementById('pathBContent').style.display='none';
+    document.getElementById('pathAContent').style.display='none';
+    document.getElementById('pathA').style.display='none';
+    document.getElementById('pathB').style.display='none';
+    document.querySelector('.apply-paths').style.display='none';
+    document.querySelector('#step5 .btn-row').style.display='none';
+    const sub=document.querySelector('#step5 p.sub');if(sub)sub.style.display='none';
+    const h2=document.querySelector('#step5 h2');if(h2)h2.style.display='none';
+    const hbox=document.querySelector('#step5 .hbox');if(hbox)hbox.style.display='none';
+    const badge=document.querySelector('#step5 .step-badge');if(badge)badge.style.display='none';
+    const pLabel=document.querySelector('[style*="font-size:1rem;font-weight:900"]');if(pLabel)pLabel.style.display='none';
     document.getElementById('successScreen').classList.add('show');
-  } catch(err) {
-    errorEl.textContent = '❌ Something went wrong. Please WhatsApp or email us directly at collab@jewelhub.co.uk';
+  }catch(err){
+    errorEl.textContent='Something went wrong. Please email collab@jewelhub.co.uk directly.';
     errorEl.classList.add('show');
-    btn.disabled = false;
-    btn.textContent = 'Submit My Application →';
+    btn.disabled=false;
+    btn.textContent='Submit My Application →';
   }
 }
 
-function buildIG() {
-  const first = document.getElementById('f_first').value || 'Creator';
-  const last = document.getElementById('f_last').value || '';
-  const email = document.getElementById('f_email').value || '—';
-  const blog = document.getElementById('f_blog').value || document.getElementById('f_instagram').value || 'your platform';
-  const platform = document.getElementById('f_platform').value || '—';
-  const audience = document.getElementById('f_audience').value || '—';
-  const niche = document.getElementById('f_niche').value || '—';
-  const handle = blog.replace(/https?:\/\/(www\.)?/,'').split('.')[0] || 'yourcreatorname';
-
-  let tier = 'Starter — 10%';
-  if (audience === '20,000 – 100,000' || audience === '100,000+') tier = 'Growth — 15%';
-
+function buildIG(){
+  const first=document.getElementById('f_first').value||'Creator';
+  const last=document.getElementById('f_last').value||'';
+  const email=document.getElementById('f_email').value||'—';
+  const blog=document.getElementById('f_blog').value||document.getElementById('f_instagram').value||'your platform';
+  const platform=document.getElementById('f_platform').value||'—';
+  const audience=document.getElementById('f_audience').value||'—';
+  const niche=document.getElementById('f_niche').value||'—';
+  const handle=blog.replace(/https?:\/\/(www\.)?/,'').split('.')[0]||'yourcreatorname';
+  let tier='Starter — 10%';
+  if(audience==='20,000 – 100,000'||audience==='100,000+')tier='Growth — 15%';
   return `
   <div class="ig-header">
     <div class="ig-logo">Jewel<span>Hub™</span></div>
-    <div class="ig-tagline">Pioneer of AI-Structured Jewellery™ · jewelhub.co.uk</div>
+    <div class="ig-tagline">Pioneer of AI-Structured Jewellery — jewelhub.co.uk</div>
     <div class="ig-title">Creator & Affiliate<br><span>Collab Guide</span></div>
-    <div class="ig-subtitle">Your personalised programme overview — read, keep, share.</div>
+    <div class="ig-subtitle">Your personalised programme overview — UK creators only.</div>
   </div>
   <div class="ig-name-banner">
-    <span>📋 Prepared for: ${first} ${last} · ${blog || platform}</span>
+    <span>Prepared for: ${first} ${last} · ${blog}</span>
     <span>Suggested Tier: ${tier} Commission</span>
   </div>
   <div class="ig-body">
-    <div class="ig-sec-title">🚀 How It Works — 5 Simple Steps</div>
+    <div class="ig-sec-title">How It Works — 5 Simple Steps</div>
     <div class="ig-steps">
       <div class="ig-step s1"><div class="ig-step-icon">✉️</div><div class="ig-step-num">1</div><h4>Apply</h4><p>Fill our form or apply via Shopify Collabs.</p></div>
-      <div class="ig-step s2"><div class="ig-step-icon">🔗</div><div class="ig-step-num">2</div><h4>Get Approved</h4><p>We WhatsApp & email you within 48 hours.</p></div>
-      <div class="ig-step s3"><div class="ig-step-icon">📦</div><div class="ig-step-num">3</div><h4>Receive Order</h4><p>We curate & ship your £40+ gifted order.</p></div>
-      <div class="ig-step s4"><div class="ig-step-icon">📸</div><div class="ig-step-num">4</div><h4>Create Content</h4><p>One honest post. Tag us. Share your link.</p></div>
-      <div class="ig-step s5"><div class="ig-step-icon">💷</div><div class="ig-step-num">5</div><h4>Earn Commission</h4><p>Every sale through your link pays you monthly.</p></div>
+      <div class="ig-step s2"><div class="ig-step-icon">🔗</div><div class="ig-step-num">2</div><h4>Approved</h4><p>We WhatsApp & email within 48 hours.</p></div>
+      <div class="ig-step s3"><div class="ig-step-icon">📦</div><div class="ig-step-num">3</div><h4>Order Arrives</h4><p>We curate & ship your £40+ gifted order.</p></div>
+      <div class="ig-step s4"><div class="ig-step-icon">📸</div><div class="ig-step-num">4</div><h4>Create Content</h4><p>2 pieces min + Judge.me review required.</p></div>
+      <div class="ig-step s5"><div class="ig-step-icon">💷</div><div class="ig-step-num">5</div><h4>Earn</h4><p>Commission paid monthly via Shopify Collabs.</p></div>
     </div>
     <div class="ig-two-col">
       <div>
-        <div class="ig-sec-title">💷 Commission Tiers</div>
+        <div class="ig-sec-title">Commission Tiers</div>
         <div class="ig-tiers">
-          <div class="ig-tier t1"><div class="t-label">Starter</div><div class="t-rate">10%</div><div class="t-desc">Open to all</div></div>
+          <div class="ig-tier t1"><div class="t-label">Starter</div><div class="t-rate">10%</div><div class="t-desc">All UK creators</div></div>
           <div class="ig-tier t2"><div class="t-label">Growth</div><div class="t-rate">15%</div><div class="t-desc">By invite</div></div>
           <div class="ig-tier t3"><div class="t-label">Partner</div><div class="t-rate">20%</div><div class="t-desc">Long-term</div></div>
         </div>
         <div style="background:#f0f7f7;border-radius:9px;padding:.7rem .9rem;margin-top:.4rem;">
-          <p style="font-size:.62rem;color:#266266;font-weight:900;margin-bottom:.2rem;">🔗 YOUR AFFILIATE LINK</p>
+          <p style="font-size:.62rem;color:#266266;font-weight:900;margin-bottom:.2rem;">Your Affiliate Link</p>
           <p style="font-size:.65rem;color:#2d4a4c;">jewelhub.co.uk/<strong>${handle}</strong></p>
           <p style="font-size:.58rem;color:#888;margin-top:.2rem;">Auto-applies 10% off · 90-day cookie · Paid monthly</p>
         </div>
       </div>
       <div>
-        <div class="ig-sec-title">📋 What You Must Do</div>
+        <div class="ig-sec-title">What You Must Do</div>
         <div class="ig-rules">
           <ul>
-            <li>✅ <strong>1 piece of content</strong> per gifted order minimum</li>
-            <li>✅ Tag <strong>@jewelhubcouk</strong> in your post</li>
+            <li>✅ <strong>2 pieces of content</strong> minimum per order</li>
+            <li>✅ <strong>Judge.me review</strong> — compulsory, not optional</li>
+            <li>✅ Tag <strong>@jewelhubcouk</strong> in every post</li>
             <li>✅ Use <strong>#JewelHubUK</strong> hashtag</li>
             <li>✅ Share your <strong>affiliate link</strong> in bio or caption</li>
-            <li>✅ Disclose: <em>"gifted by @jewelhubcouk"</em></li>
-            <li>✅ Blog post? Submit a <strong>Judge.me review</strong> too</li>
-            <li>❌ No scripted reviews · No minimum followers</li>
+            <li>✅ Disclose: "gifted by @jewelhubcouk"</li>
+            <li>✅ Submit content links via submission form</li>
+            <li>🇬🇧 UK creators only</li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="ig-sec-title">🎁 Free Gift System — What Comes With Every Order</div>
+    <div class="ig-sec-title">Free Gift System — What Comes With Every Order</div>
     <div class="ig-gifts">
-      <div class="ig-gift-row g1"><span class="ig-gift-emoji">🧴</span><span class="ig-gift-amount">Any</span><span class="ig-gift-desc">Free jewellery cloth included</span></div>
+      <div class="ig-gift-row g1"><span class="ig-gift-emoji">🧴</span><span class="ig-gift-amount">Any</span><span class="ig-gift-desc">Free jewellery cloth</span></div>
       <div class="ig-gift-row g2"><span class="ig-gift-emoji">✨</span><span class="ig-gift-amount">£20+</span><span class="ig-gift-desc">Free MiniCharm™ with faux leather necklace</span></div>
       <div class="ig-gift-row g3"><span class="ig-gift-emoji">🌍</span><span class="ig-gift-amount">£30+</span><span class="ig-gift-desc">Free global shipping</span></div>
-      <div class="ig-gift-row g4" style="border:2px solid #C9A84C;border-radius:9px;font-weight:800;"><span class="ig-gift-emoji">💛</span><span class="ig-gift-amount" style="color:#C9A84C;">£40+ ★</span><span class="ig-gift-desc">2 × MiniCharm™ with faux leather necklace — <strong>YOUR GIFTED TIER</strong></span></div>
-      <div class="ig-gift-row g5"><span class="ig-gift-emoji">🔗</span><span class="ig-gift-amount">£100+</span><span class="ig-gift-desc">Free FortunaLink™ Starter Bracelet Kit + 2 MiniCharms™</span></div>
+      <div class="ig-gift-row g4" style="border:2px solid #C9A84C;border-radius:9px;font-weight:800;"><span class="ig-gift-emoji">💛</span><span class="ig-gift-amount" style="color:#C9A84C;">£40+ ★</span><span class="ig-gift-desc">2 x MiniCharm™ with faux leather necklace — YOUR GIFTED TIER</span></div>
+      <div class="ig-gift-row g5"><span class="ig-gift-emoji">🔗</span><span class="ig-gift-amount">£100+</span><span class="ig-gift-desc">Free FortunaLink™ Starter Kit + 2 MiniCharms™</span></div>
     </div>
   </div>
   <div class="ig-footer">
-    <div class="ig-contact"><strong>Contact JewelHub™</strong>collab@jewelhub.co.uk<br>@jewelhubcouk · jewelhub.co.uk/collab<br>WhatsApp: +44 7771 006444</div>
+    <div class="ig-contact"><strong>Contact JewelHub™</strong>collab@jewelhub.co.uk<br>@jewelhubcouk · jewelhub.co.uk/collab</div>
     <div class="ig-contact"><strong>Prepared for</strong>${first} ${last}<br>${email}<br>${platform} · ${niche}</div>
-    <div class="ig-cta-box">✦ APPROVED? ✦<br>We'll WhatsApp &amp;<br>email you within 48hrs</div>
+    <div class="ig-cta-box">Approved?<br>We'll WhatsApp &<br>email within 48hrs</div>
   </div>`;
 }
 
-function openPreview() {
-  document.getElementById('previewContent').innerHTML = buildIG();
-  document.getElementById('previewModal').classList.add('open');
-}
+function openPreview(){document.getElementById('previewContent').innerHTML=buildIG();document.getElementById('previewModal').classList.add('open');}
+function closePreview(){document.getElementById('previewModal').classList.remove('open');}
 
-function closePreview() {
-  document.getElementById('previewModal').classList.remove('open');
-}
-
-function doPrint() {
-  const win = window.open('','_blank');
+function doPrint(){
+  const win=window.open('','_blank');
   win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>JewelHub Collab Guide</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-  *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',sans-serif;background:#fff}
-  @page{size:A4;margin:0}
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',sans-serif;background:#fff}@page{size:A4;margin:0}
   .ig{width:210mm;min-height:297mm;font-family:'Nunito',sans-serif;background:#fff}
   .ig-header{background:linear-gradient(135deg,#1a4245,#266266);padding:1.8rem 2.5rem 1.3rem;color:#fff;position:relative;overflow:hidden}
   .ig-header::after{content:'✦ ✦ ✦';position:absolute;bottom:.5rem;right:2rem;color:rgba(201,168,76,.25);font-size:1.1rem;letter-spacing:.5rem}
-  .ig-logo{font-size:1.2rem;font-weight:900;letter-spacing:.06em}.ig-logo span{color:#C9A84C}
+  .ig-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;letter-spacing:.06em}.ig-logo span{color:#C9A84C}
   .ig-tagline{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:.1rem}
   .ig-title{font-size:1.9rem;font-weight:900;margin-top:.7rem;line-height:1.1}.ig-title span{color:#e8c96a}
   .ig-subtitle{font-size:.78rem;opacity:.65;margin-top:.3rem}
@@ -822,10 +766,7 @@ function doPrint() {
   .ig-contact{color:rgba(255,255,255,.65);font-size:.6rem;line-height:1.7}
   .ig-contact strong{color:#C9A84C;font-size:.65rem;display:block;letter-spacing:.08em;text-transform:uppercase}
   .ig-cta-box{background:#C9A84C;color:#1a1a1a;padding:.45rem 1rem;border-radius:999px;font-size:.62rem;font-weight:900;letter-spacing:.08em;text-align:center;line-height:1.5}
-  </style></head><body>
-  <div class="ig">${buildIG()}</div>
-  <script>window.onload=function(){window.print();}<\/script>
-  </body></html>`);
+  </style></head><body><div class="ig">${buildIG()}</div><script>window.onload=function(){window.print();}<\/script></body></html>`);
   win.document.close();
 }
 </script>
